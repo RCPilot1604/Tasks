@@ -45,6 +45,11 @@ public class Main {
         }
     }
 
+    public static void printDataWithStream(ArrayList<Task> tasksData) {
+        System.out.println("Printing all data with streams...");
+        tasksData.parallelStream()             //creating the stream
+                .forEach(System.out::println); //terminal operator
+    }
     public static void printDeadlines(ArrayList<Task> tasksData) {
         for (Task t : tasksData) {
             if (t instanceof Deadline) {
